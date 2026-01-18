@@ -35,43 +35,6 @@
         padding: 64px 20px 80px;
       }
 
-      .hero {
-        display: grid;
-        gap: 24px;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        align-items: end;
-        margin-bottom: 40px;
-      }
-
-      .hero h1 {
-        font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
-        font-size: clamp(2.4rem, 4vw, 4rem);
-        margin: 0;
-        letter-spacing: -0.02em;
-      }
-
-      .hero p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 1.05rem;
-        line-height: 1.6;
-      }
-
-      .filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .chip {
-        border: 1px solid rgba(16, 20, 24, 0.12);
-        border-radius: 999px;
-        padding: 8px 16px;
-        font-size: 0.9rem;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(4px);
-      }
-
       .news-grid {
         display: grid;
         gap: 20px;
@@ -183,29 +146,11 @@
         .page {
           padding: 48px 16px 60px;
         }
-
-        .hero {
-          align-items: start;
-        }
       }
     </style>
   </head>
   <body>
     <main class="page">
-      <section class="hero">
-        <div>
-          <h1>Recent News</h1>
-          <p>今日の重要ニュースをカテゴリごとにピックアップ。短時間でキャッチアップできます。</p>
-        </div>
-        <div class="filters">
-          <div class="chip">All</div>
-          <div class="chip">Business</div>
-          <div class="chip">Product</div>
-          <div class="chip">Culture</div>
-          <div class="chip">Tech</div>
-        </div>
-      </section>
-
       <section class="news-grid">
         <article class="card">
           <div class="tag">Breaking</div>

@@ -12,6 +12,7 @@
         --accent-2: #1a7f72;
         --card: #ffffff;
         --shadow: 0 16px 40px rgba(16, 20, 24, 0.12);
+        --item-gap: 16px;
       }
 
       * {
@@ -22,14 +23,14 @@
         margin: 0;
         color: var(--ink);
         font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-        background: #ffffff;
+        background: #f5f3ef;
         min-height: 100vh;
       }
 
       .page {
         max-width: 1100px;
         margin: 0 auto;
-        padding: 64px 20px 80px;
+        padding: var(--item-gap) 20px 80px;
       }
 
       .news-list {
@@ -37,7 +38,7 @@
         margin: 0;
         padding: 0;
         display: grid;
-        gap: 16px;
+        gap: var(--item-gap);
       }
 
       .news-item {
@@ -76,6 +77,13 @@
         text-transform: uppercase;
       }
 
+      .news-header {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
       .news-title {
         margin: 0;
         font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
@@ -87,6 +95,7 @@
         margin: 0;
         color: var(--muted);
         line-height: 1.6;
+        text-indent: 1em;
       }
 
       .sidebar {
@@ -116,7 +125,7 @@
 
       @media (max-width: 640px) {
         .page {
-          padding: 48px 16px 60px;
+          padding: var(--item-gap) 16px 60px;
         }
       }
     </style>
@@ -124,57 +133,20 @@
   <body>
     <main class="page">
       <section class="news-list" aria-label="News timeline">
-        <article class="news-item">
-          <time class="news-date" datetime="2025-03-12">Mar 12, 2025</time>
-          <h2 class="news-title">新しい決済パートナーの導入で海外取引が最大 48% 高速化</h2>
-          <p class="news-summary">主要な海外市場で決済経路を最適化し、ピーク時の処理時間を短縮しました。</p>
-        </article>
 
         <article class="news-item">
-          <time class="news-date" datetime="2025-03-11">Mar 11, 2025</time>
-          <h2 class="news-title">秋のプロダクトロードマップを公開、AI 支援機能を全プランへ</h2>
-          <p class="news-summary">自動要約や検索支援を順次展開し、導入ハードルを下げる計画です。</p>
+          <div class="news-header">
+            <time class="news-date" datetime="2026-01-18">2026, 01, 18</time>
+            <h2 class="news-title"> ホームページをリニューアルしました</h2>
+          </div>
+          <p class="news-summary">
+          Gemini-cli, Codexを駆使しして，ホームページをリニューアルしました．
+	  音声入力開始ホームページを更新しました．とても良いページになりました．
+	  これから情報発信をしていきます．
+
+          </p>
         </article>
 
-        <article class="news-item">
-          <time class="news-date" datetime="2025-03-10">Mar 10, 2025</time>
-          <h2 class="news-title">グローバル拠点の新しい働き方: 週 4 日集中サイクルの成果</h2>
-          <p class="news-summary">試験導入したチームの定量結果と、ナレッジ共有の変化をまとめました。</p>
-        </article>
-
-        <article class="news-item">
-          <time class="news-date" datetime="2025-03-09">Mar 09, 2025</time>
-          <h2 class="news-title">セキュリティ監視レイヤーの強化でアラート精度を向上</h2>
-          <p class="news-summary">誤検知率を抑えながら、重大インシデントの検出速度を改善しました。</p>
-        </article>
-
-        <article class="news-item">
-          <time class="news-date" datetime="2025-03-08">Mar 08, 2025</time>
-          <h2 class="news-title">新しいモバイルアプリがリリース、リアルタイム通知に対応</h2>
-          <p class="news-summary">要点を逃さない通知ハブと、新しいアカウント管理画面を追加しました。</p>
-        </article>
-
-        <article class="news-item">
-          <time class="news-date" datetime="2025-03-07">Mar 07, 2025</time>
-          <h2 class="news-title">四半期レポート: 主要指標が過去最高を更新</h2>
-          <p class="news-summary">継続率とエンゲージメントが上昇し、重点投資領域が明確になりました。</p>
-        </article>
-      </section>
-
-      <section class="sidebar">
-        <div class="sidebar-card">
-          <strong>Newsletter</strong>
-          <p>毎週のまとめをメールで受け取る。</p>
-        </div>
-        <div class="sidebar-card">
-          <strong>Top Topics</strong>
-          <p>AI, Growth, Security, Remote Work</p>
-        </div>
-        <div class="sidebar-card">
-          <strong>Next Update</strong>
-          <p>次回は金曜 10:00 に配信予定。</p>
-        </div>
-      </section>
     </main>
   </body>
 </html>

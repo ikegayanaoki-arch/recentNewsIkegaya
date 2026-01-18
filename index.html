@@ -22,10 +22,7 @@
         margin: 0;
         color: var(--ink);
         font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-        background:
-          radial-gradient(circle at 10% 10%, rgba(255, 106, 42, 0.15), transparent 40%),
-          radial-gradient(circle at 90% 20%, rgba(26, 127, 114, 0.18), transparent 35%),
-          linear-gradient(160deg, #f6f2ea 0%, #eef2f6 55%, #f9f5ef 100%);
+        background: #ffffff;
         min-height: 100vh;
       }
 
@@ -35,86 +32,61 @@
         padding: 64px 20px 80px;
       }
 
-      .news-grid {
+      .news-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         display: grid;
-        gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
       }
 
-      .card {
+      .news-item {
         background: var(--card);
-        border-radius: 18px;
-        padding: 20px;
+        border-radius: 16px;
+        padding: 18px 20px;
         box-shadow: var(--shadow);
-        position: relative;
-        overflow: hidden;
+        display: grid;
+        gap: 10px;
         animation: rise 0.8s ease forwards;
         opacity: 0;
+        position: relative;
+        overflow: hidden;
       }
 
-      .card:nth-child(2) { animation-delay: 0.1s; }
-      .card:nth-child(3) { animation-delay: 0.2s; }
-      .card:nth-child(4) { animation-delay: 0.3s; }
-      .card:nth-child(5) { animation-delay: 0.4s; }
-      .card:nth-child(6) { animation-delay: 0.5s; }
+      .news-item:nth-child(2) { animation-delay: 0.1s; }
+      .news-item:nth-child(3) { animation-delay: 0.2s; }
+      .news-item:nth-child(4) { animation-delay: 0.3s; }
+      .news-item:nth-child(5) { animation-delay: 0.4s; }
+      .news-item:nth-child(6) { animation-delay: 0.5s; }
 
-      .card::after {
+      .news-item::after {
         content: "";
         position: absolute;
         inset: auto -30% -40% auto;
         width: 140px;
         height: 140px;
-        background: radial-gradient(circle, rgba(255, 106, 42, 0.22), transparent 70%);
+        background: radial-gradient(circle, rgba(255, 106, 42, 0.18), transparent 70%);
         pointer-events: none;
       }
 
-      .card h2 {
-        margin: 8px 0 12px;
+      .news-date {
+        color: var(--muted);
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .news-title {
+        margin: 0;
         font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
         font-size: 1.25rem;
         line-height: 1.35;
       }
 
-      .meta {
-        display: flex;
-        gap: 12px;
+      .news-summary {
+        margin: 0;
         color: var(--muted);
-        font-size: 0.85rem;
-      }
-
-      .tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 10px;
-        border-radius: 999px;
-        background: rgba(26, 127, 114, 0.12);
-        color: var(--accent-2);
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-      }
-
-      .cta {
-        margin-top: 14px;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--ink);
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-      .cta span {
-        display: inline-block;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: var(--accent);
-        color: white;
-        text-align: center;
-        line-height: 26px;
+        line-height: 1.6;
       }
 
       .sidebar {
@@ -151,83 +123,41 @@
   </head>
   <body>
     <main class="page">
-      <section class="news-grid">
-        <article class="card">
-          <div class="tag">Breaking</div>
-          <h2>新しい決済パートナーの導入で海外取引が最大 48% 高速化</h2>
-          <div class="meta">
-            <span>Mar 12, 2025</span>
-            <span>Business</span>
-          </div>
-          <a class="cta" href="#">
-            Read more
-            <span>→</span>
-          </a>
+      <section class="news-list" aria-label="News timeline">
+        <article class="news-item">
+          <time class="news-date" datetime="2025-03-12">Mar 12, 2025</time>
+          <h2 class="news-title">新しい決済パートナーの導入で海外取引が最大 48% 高速化</h2>
+          <p class="news-summary">主要な海外市場で決済経路を最適化し、ピーク時の処理時間を短縮しました。</p>
         </article>
 
-        <article class="card">
-          <div class="tag">Update</div>
-          <h2>秋のプロダクトロードマップを公開、AI 支援機能を全プランへ</h2>
-          <div class="meta">
-            <span>Mar 11, 2025</span>
-            <span>Product</span>
-          </div>
-          <a class="cta" href="#">
-            Read more
-            <span>→</span>
-          </a>
+        <article class="news-item">
+          <time class="news-date" datetime="2025-03-11">Mar 11, 2025</time>
+          <h2 class="news-title">秋のプロダクトロードマップを公開、AI 支援機能を全プランへ</h2>
+          <p class="news-summary">自動要約や検索支援を順次展開し、導入ハードルを下げる計画です。</p>
         </article>
 
-        <article class="card">
-          <div class="tag">Story</div>
-          <h2>グローバル拠点の新しい働き方: 週 4 日集中サイクルの成果</h2>
-          <div class="meta">
-            <span>Mar 10, 2025</span>
-            <span>Culture</span>
-          </div>
-          <a class="cta" href="#">
-            Read more
-            <span>→</span>
-          </a>
+        <article class="news-item">
+          <time class="news-date" datetime="2025-03-10">Mar 10, 2025</time>
+          <h2 class="news-title">グローバル拠点の新しい働き方: 週 4 日集中サイクルの成果</h2>
+          <p class="news-summary">試験導入したチームの定量結果と、ナレッジ共有の変化をまとめました。</p>
         </article>
 
-        <article class="card">
-          <div class="tag">Insight</div>
-          <h2>セキュリティ監視レイヤーの強化でアラート精度を向上</h2>
-          <div class="meta">
-            <span>Mar 09, 2025</span>
-            <span>Tech</span>
-          </div>
-          <a class="cta" href="#">
-            Read more
-            <span>→</span>
-          </a>
+        <article class="news-item">
+          <time class="news-date" datetime="2025-03-09">Mar 09, 2025</time>
+          <h2 class="news-title">セキュリティ監視レイヤーの強化でアラート精度を向上</h2>
+          <p class="news-summary">誤検知率を抑えながら、重大インシデントの検出速度を改善しました。</p>
         </article>
 
-        <article class="card">
-          <div class="tag">Launch</div>
-          <h2>新しいモバイルアプリがリリース、リアルタイム通知に対応</h2>
-          <div class="meta">
-            <span>Mar 08, 2025</span>
-            <span>Product</span>
-          </div>
-          <a class="cta" href="#">
-            Read more
-            <span>→</span>
-          </a>
+        <article class="news-item">
+          <time class="news-date" datetime="2025-03-08">Mar 08, 2025</time>
+          <h2 class="news-title">新しいモバイルアプリがリリース、リアルタイム通知に対応</h2>
+          <p class="news-summary">要点を逃さない通知ハブと、新しいアカウント管理画面を追加しました。</p>
         </article>
 
-        <article class="card">
-          <div class="tag">Report</div>
-          <h2>四半期レポート: 主要指標が過去最高を更新</h2>
-          <div class="meta">
-            <span>Mar 07, 2025</span>
-            <span>Business</span>
-          </div>
-          <a class="cta" href="#">
-            Read more
-            <span>→</span>
-          </a>
+        <article class="news-item">
+          <time class="news-date" datetime="2025-03-07">Mar 07, 2025</time>
+          <h2 class="news-title">四半期レポート: 主要指標が過去最高を更新</h2>
+          <p class="news-summary">継続率とエンゲージメントが上昇し、重点投資領域が明確になりました。</p>
         </article>
       </section>
 

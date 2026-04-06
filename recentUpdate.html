@@ -4,135 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Recent News</title>
-    <style>
-      :root {
-        --ink: #101418;
-        --muted: #5b636a;
-        --accent: #ff6a2a;
-        --accent-2: #1a7f72;
-        --card: #ffffff;
-        --shadow: 0 16px 40px rgba(16, 20, 24, 0.12);
-        --item-gap: 16px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        color: var(--ink);
-        font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-        background: #f5f3ef;
-        min-height: 100vh;
-      }
-
-      .page {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: var(--item-gap) 20px 80px;
-      }
-
-      .news-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        gap: var(--item-gap);
-      }
-
-      .news-item {
-        background: var(--card);
-        border-radius: 16px;
-        padding: 18px 20px;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 10px;
-        animation: rise 0.8s ease forwards;
-        opacity: 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .news-item:nth-child(2) { animation-delay: 0.1s; }
-      .news-item:nth-child(3) { animation-delay: 0.2s; }
-      .news-item:nth-child(4) { animation-delay: 0.3s; }
-      .news-item:nth-child(5) { animation-delay: 0.4s; }
-      .news-item:nth-child(6) { animation-delay: 0.5s; }
-
-      .news-item::after {
-        content: "";
-        position: absolute;
-        inset: auto -30% -40% auto;
-        width: 140px;
-        height: 140px;
-        background: radial-gradient(circle, rgba(255, 106, 42, 0.18), transparent 70%);
-        pointer-events: none;
-      }
-
-      .news-date {
-        color: var(--muted);
-        font-size: 0.85rem;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-      }
-
-      .news-header {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .news-title {
-        margin: 0;
-        font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
-        font-size: 1.25rem;
-        line-height: 1.35;
-      }
-
-      .news-summary {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-        text-indent: 1em;
-      }
-
-      .sidebar {
-        margin-top: 36px;
-        display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .sidebar-card {
-        background: rgba(255, 255, 255, 0.7);
-        border-radius: 16px;
-        padding: 16px;
-        border: 1px solid rgba(16, 20, 24, 0.08);
-      }
-
-      @keyframes rise {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @media (max-width: 640px) {
-        .page {
-          padding: var(--item-gap) 16px 60px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="recentUpdate.css" />
   </head>
   <body>
     <main class="page">
       <section class="news-list" aria-label="News timeline">
+
+         <article class="news-item">
+          <div class="news-header">
+            <time class="news-date" datetime="2026-04-06">2026 April 6th</time>
+            <h2 class="news-title"> 2026年度が始まりました</h2>
+          </div>
+          <p class="news-summary">
+	  2026年度が始まりました．
+	  高専連携生2名，学部生2名，
+	  修士学生1名，
+	  ダブルデグリー生1名，
+	  訪問研究員1名，が研究室に加わりました．
+          </p>
+        </article>
 
         <article class="news-item">
           <div class="news-header">
@@ -143,7 +33,6 @@
           Gemini-cli, Codexを駆使しして，ホームページをリニューアルしました．
 	  音声入力開始ホームページを更新しました．とても良いページになりました．
 	  これから情報発信をしていきます．
-
           </p>
         </article>
 
